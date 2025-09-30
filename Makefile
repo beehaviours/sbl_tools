@@ -26,7 +26,8 @@ distclean:
 	rm -fr build
 
 install:
-	install -D -m 644 build/libsbl.so  $(DESTDIR)$(PREFIX)/lib/libsbl.so
+	install -D -m 755 build/sbl_get_version  $(DESTDIR)$(PREFIX)/bin/sbl_get_version
+	install -D -m 755 build/sbl_find_video   $(DESTDIR)$(PREFIX)/bin/sbl_find_video
 
 .PHONY: all clean distclean install
 
