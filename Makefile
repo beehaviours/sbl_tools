@@ -1,13 +1,14 @@
 CC = gcc
-CFLAGS = -Wall -c `pkg-config --cflags libsbl aravis-0.8`
+CFLAGS = -Wall -c `pkg-config --cflags libsbl aravis-0.8 libpng`
 
-LDFLAGS = -lm `pkg-config --libs libsbl aravis-0.8`
+LDFLAGS = -lm `pkg-config --libs libsbl aravis-0.8 libpng`
 
 PREFIX ?= /usr/local
 
 BINARIES = build/sbl_get_version \
 		   build/sbl_find_video \
-		   build/sbl_cam_list
+		   build/sbl_cam_list \
+		   build/sbl_cam_grab_frame
 
 all: build $(BINARIES)
 
@@ -18,6 +19,9 @@ build/sbl_find_video: build/sbl_find_video.o
 	$(CC) $(LDFLAGS) -o $@ $<
 
 build/sbl_cam_list: build/sbl_cam_list.o
+	$(CC) $(LDFLAGS) -o $@ $<
+
+build/sbl_cam_grab_frame: build/sbl_cam_grab_frame.o
 	$(CC) $(LDFLAGS) -o $@ $<
 
 build:
