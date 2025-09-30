@@ -1,7 +1,7 @@
 CC = gcc
-CFLAGS = -Wall -c `pkg-config --cflags libsbl aravis-0.8 libpng`
+CFLAGS = -Wall -c `pkg-config --cflags libsbl aravis-0.10 libpng`
 
-LDFLAGS = -lm `pkg-config --libs libsbl aravis-0.8 libpng`
+LDFLAGS = -lm `pkg-config --libs libsbl aravis-0.10 libpng`
 
 PREFIX ?= /usr/local
 
