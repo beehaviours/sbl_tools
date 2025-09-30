@@ -39,6 +39,8 @@ distclean:
 install:
 	install -D -m 755 build/sbl_get_version  $(DESTDIR)$(PREFIX)/bin/sbl_get_version
 	install -D -m 755 build/sbl_find_video   $(DESTDIR)$(PREFIX)/bin/sbl_find_video
+	install -D -m 755 build/sbl_cam_list     $(DESTDIR)$(PREFIX)/bin/sbl_cam_list
+	install -D -m 755 build/sbl_cam_grab_frame   $(DESTDIR)$(PREFIX)/bin/sbl_cam_grab_frame
 
 .PHONY: all clean distclean install
 
