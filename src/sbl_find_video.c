@@ -13,7 +13,7 @@ int main( int argc, char** argv ) {
 	int hour;
 	int minute;
 	int ret ;
-	char* filename = NULL;
+	char filename[1024] = {0} ;
 
 	if (argc != 5)
 		goto erreur ;
@@ -30,7 +30,7 @@ int main( int argc, char** argv ) {
 	if ( sscanf( argv[4], "%2d:%2d", &hour, &minute ) != 2 )
 		goto erreur ;
 
-	ret = sbl_find_video(filename, module, cam, \
+	ret = sbl_find_video(filename, 1024, module, cam, \
 			year, month, day, hour, minute);
 
 	if (ret) {
@@ -39,7 +39,6 @@ int main( int argc, char** argv ) {
 	}
 	
 	printf("%s\n",filename);
-	free(filename);
 
 	return 0 ;
 
