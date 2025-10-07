@@ -24,7 +24,7 @@ int main( int argc, char** argv ) {
 	if ( sscanf( argv[2], "%d", &cam ) != 1 )
 		goto erreur ;
 
-	if ( sscanf( argv[3], "%4d%2d%2d", &year, &month, &day ) != 3 )
+	if ( sscanf( argv[3], "%4d-%2d-%2d", &year, &month, &day ) != 3 )
 		goto erreur ;
 
 	if ( sscanf( argv[4], "%2d:%2d", &hour, &minute ) != 2 )
@@ -45,7 +45,7 @@ int main( int argc, char** argv ) {
 erreur:
 	fprintf(stderr, "Error: Wrong args.\n");
 	fprintf(stderr, "Usage:\n");
-	fprintf(stderr, "\t%s MODULE CAM YYYYMMDD HH:MM\n", argv[0]);
+	fprintf(stderr, "\t%s MODULE CAM YYYY-MM-DD HH:MM\n", argv[0]);
 	fprintf(stderr,"\n");
 
 	return -1 ;
